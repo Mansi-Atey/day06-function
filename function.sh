@@ -1,27 +1,19 @@
 #!/bin/bash
-echo "1 Convert Celsius temperature into Fahrenheit"
-echo "2 Convert Fahrenheit temperatures into Celsius"
-read -p "Select your choice (1-2) : " option
-
-funtC ( ) {
-read -p "Enter temperature in (F) :" tf
-tc=$((($tf-32) * 5/9))
-echo "temp in F =" $tc C
-}
-funtF ( ) {
-read -p "Enter temperature in (C) :" tc
-tf=$((($tc * 9/5)+32))
-echo "temp in C =" $tf F
-}
-
-case $option in
-"1")
- funtF
-      ;;
-"2")
- funtC
- ;;
-*)
- echo "Invaild"
-;;
-esac
+echo "Enter a number"
+read num
+num=$num
+s=0
+rev=$rev
+temp=$num
+while [ $num -gt 0 ]
+do
+ s=$(( $num % 10 ))
+num=$(( $num / 10 ))
+rev=$( echo ${rev}${s})
+done
+if [ $temp -eq $rev ]
+then
+ echo "The number is Palindrome"
+else
+ echo "The number is not Palindrome"
+fi
